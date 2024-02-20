@@ -1,21 +1,22 @@
-use std::io;
+use std::{io};
 
 fn main() {
     let first_number: i32 = read_int();
     let symbol = read_string().trim().to_string();
     let second_number: i32 = read_int();
 
-    println!("{}", first_number);
-    println!("{}", symbol);
-    println!("{}", second_number);
+    let addition = "+";
+    let minus = "-";
+    let multiplication = "*";
+    let division = "/";
 
-    if symbol == '+'{
+    if symbol == addition{
         println!("{}",first_number + second_number)
-    } else if symbol == '-'{
+    } else if symbol == minus{
         println!("{}", first_number - second_number)
-    } else if  symbol == '*'{
+    } else if  symbol == multiplication{
         println!("{}", first_number * second_number)
-    } else if  symbol == '/'{
+    } else if  symbol == division{
         println!("{}", first_number / second_number)
     } else {
         println!("Coś poszło nie tak")
@@ -24,7 +25,7 @@ fn main() {
 }
 
 fn read_string() -> String{
-    let mut input = str::new();
+    let mut input = String::new();
     io::stdin().read_line(&mut input).expect("Can't read user input");
 
     input
